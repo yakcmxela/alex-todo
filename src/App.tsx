@@ -4,7 +4,7 @@ import { Interactor } from "core/interactor"
 import { useInteractor } from "hooks"
 
 // Toggle between custom routing and react-router library
-const routeWithLibrary = false
+const routeWithLibrary = true
 const AppRouter = routeWithLibrary ? LibraryRouter : CustomRouter
 
 export const App = () => {

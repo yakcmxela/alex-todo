@@ -6,7 +6,7 @@ export const CustomRouter = ({ interactor }: any) => {
     about: <Presenters.About />,
     contact: <Presenters.Contact />,
     detail: <Presenters.Detail interactor={interactor} />,
-    overview: <Presenters.Overview interactor={interactor} />,
+    overview: <Presenters.Overview />,
   }
   return (
     <Presenters.Layout

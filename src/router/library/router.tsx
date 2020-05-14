@@ -18,7 +18,7 @@ export const LibraryRouter = ({ children, interactor }: any) => {
         <Route
           path="/overview"
           exact
-          component={() => <Presenters.Overview interactor={interactor} />}
+          component={() => <Presenters.Overview />}
         />
         <Route
           path="/detail"

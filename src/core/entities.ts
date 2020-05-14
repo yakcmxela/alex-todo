@@ -17,7 +17,9 @@ export interface SiteSettings {
   footer: Routes
 }
 
-export type Todos = Array<TodoItem>
+export type Todos = {
+  todos: Array<TodoItem>
+}
 
 export interface TodoItem {
   id: number
@@ -25,19 +27,3 @@ export interface TodoItem {
   dueDate: string
   title: string
 }
-
-export interface Test {
-  test2: string
-}
-
-export type TodoItemTwo = TodoItem | Test
-
-const test: TodoItemTwo = {
-  id: 1,
-  description: "string",
-  dueDate: "string",
-  title: "string",
-  test: ""
-}
-
-console.log(test)

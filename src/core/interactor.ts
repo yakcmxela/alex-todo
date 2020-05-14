@@ -1,5 +1,5 @@
-import * as Worker from "./worker"
-import { RouteItem, SiteSettings, Todos, TodoItem } from "./entities"
+// import * as Worker from "./worker"
+import { RouteItem, SiteSettings, TodoItem } from "./entities"
 import { SiteSettingsResponse } from "./models"
 
 export class Interactor {
@@ -22,16 +22,16 @@ export class Interactor {
   }
   todos: Array<TodoItem> = []
 
-  constructor() {
-    this.addTodoRequest = this.addTodoRequest.bind(this)
-    this.addTodoResponse = this.addTodoResponse.bind(this)
-    this.init = this.init.bind(this)
-    this.removeTodoRequest = this.removeTodoRequest.bind(this)
-    this.removeTodoResponse = this.removeTodoResponse.bind(this)
-    this.reroute = this.reroute.bind(this)
+  // constructor() {
+  //   // this.addTodoRequest = this.addTodoRequest.bind(this)
+  //   // this.addTodoResponse = this.addTodoResponse.bind(this)
+  //   // this.init = this.init.bind(this)
+  //   // this.removeTodoRequest = this.removeTodoRequest.bind(this)
+  //   // this.removeTodoResponse = this.removeTodoResponse.bind(this)
+  //   // this.reroute = this.reroute.bind(this)
 
-    Worker.fetchFromCMS(this.init)
-  }
+  //   // Worker.fetchFromCMS(this.init)
+  // }
 
   init(request: SiteSettingsResponse) {
     this.cms = {
@@ -43,20 +43,20 @@ export class Interactor {
     this.route = request.initial
   }
 
-  addTodoRequest(request: TodoItem): void {
-    Worker.addTodo(this.todos, request, this.addTodoResponse)
-  }
-  addTodoResponse(response: Todos): void {
-    this.todos = response
-    this.route = this.home
-  }
-  removeTodoRequest(request: number): void {
-    Worker.removeTodo(this.todos, request, this.removeTodoResponse)
-  }
-  removeTodoResponse(response: Todos): void {
-    this.todos = response
-  }
-  reroute(route: RouteItem): void {
-    this.route = route
-  }
+  // addTodoRequest(request: TodoItem): void {
+  //   Worker.addTodo(this.todos, request, this.addTodoResponse)
+  // }
+  // addTodoResponse(response: Todos): void {
+  //   this.todos = response
+  //   this.route = this.home
+  // }
+  // removeTodoRequest(request: number): void {
+  //   Worker.removeTodo(this.todos, request, this.removeTodoResponse)
+  // }
+  // removeTodoResponse(response: Todos): void {
+  //   this.todos = response
+  // }
+  // reroute(route: RouteItem): void {
+  //   this.route = route
+  // }
 }
